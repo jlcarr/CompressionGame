@@ -1,0 +1,49 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://MainTheme.tres" type="Theme" id=1]
+[ext_resource path="res://LetterSetter.gd" type="Script" id=2]
+
+
+[node name="Panel" type="Panel"]
+margin_right = 507.0
+margin_bottom = 40.0
+rect_min_size = Vector2( 0, 40 )
+size_flags_horizontal = 3
+size_flags_vertical = 4
+theme = ExtResource( 1 )
+script = ExtResource( 2 )
+
+[node name="HAlignment" type="HBoxContainer" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 10.0
+margin_right = -5.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="LetterGlyph" type="Label" parent="HAlignment"]
+margin_right = 12.0
+margin_bottom = 40.0
+size_flags_horizontal = 4
+size_flags_vertical = 3
+text = "A"
+valign = 1
+
+[node name="ColonGlyph" type="Label" parent="HAlignment"]
+margin_left = 16.0
+margin_right = 39.0
+margin_bottom = 40.0
+size_flags_horizontal = 4
+size_flags_vertical = 3
+text = " : "
+valign = 1
+
+[node name="EncodingEntry" type="LineEdit" parent="HAlignment"]
+margin_left = 43.0
+margin_top = 2.0
+margin_right = 492.0
+margin_bottom = 38.0
+size_flags_horizontal = 3
+size_flags_vertical = 4
+caret_blink = true
+

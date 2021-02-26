@@ -1,0 +1,206 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://basic_font.tres" type="DynamicFont" id=1]
+[ext_resource path="res://Main.gd" type="Script" id=2]
+
+[sub_resource type="Theme" id=1]
+default_font = ExtResource( 1 )
+
+[sub_resource type="Animation" id=2]
+resource_name = "typing"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:percent_visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 2 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ 0.0, 1.0 ]
+}
+
+[node name="Main" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+theme = SubResource( 1 )
+script = ExtResource( 2 )
+
+[node name="LevelHeader" type="Label" parent="."]
+anchor_left = 0.05
+anchor_top = 0.05
+anchor_right = 0.95
+anchor_bottom = 0.1
+text = "Level Title"
+align = 1
+autowrap = true
+
+[node name="Instructions" type="RichTextLabel" parent="."]
+editor/display_folded = true
+anchor_left = 0.05
+anchor_top = 0.1
+anchor_right = 0.95
+anchor_bottom = 0.4
+visible_characters = 0
+percent_visible = 0.0
+text = "YOU are a telegraph operator working with the world's latest and greatest form of long distance communication!
+The first message you are tasked with sending is: AABB (to test if the machine is working).
+However you are only able to send dots and dashes (0's and 1's).
+How can you encode the A's and B's with 0's and 1's in order to send your message?"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Instructions"]
+anims/typing = SubResource( 2 )
+
+[node name="AlphabetHeader" type="Label" parent="."]
+anchor_left = 0.05
+anchor_top = 0.4
+anchor_right = 0.5
+anchor_bottom = 0.45
+text = "Encoding Table"
+align = 1
+autowrap = true
+
+[node name="MessageHeader" type="Label" parent="."]
+anchor_left = 0.5
+anchor_top = 0.4
+anchor_right = 1.0
+anchor_bottom = 0.45
+text = "Message Status"
+align = 1
+autowrap = true
+
+[node name="MessageView" type="VBoxContainer" parent="."]
+editor/display_folded = true
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.9
+
+[node name="ProblemStringHeader" type="Label" parent="MessageView"]
+margin_right = 512.0
+margin_bottom = 26.0
+text = "Plain Message"
+align = 1
+clip_text = true
+
+[node name="ProblemString" type="Label" parent="MessageView"]
+margin_top = 30.0
+margin_right = 512.0
+margin_bottom = 56.0
+text = "AABB"
+align = 1
+clip_text = true
+
+[node name="EncodedStringHeader" type="Label" parent="MessageView"]
+margin_top = 60.0
+margin_right = 512.0
+margin_bottom = 118.0
+size_flags_vertical = 3
+text = "Encoded Message"
+align = 1
+valign = 2
+autowrap = true
+
+[node name="EncodedString" type="Label" parent="MessageView"]
+margin_top = 122.0
+margin_right = 512.0
+margin_bottom = 180.0
+size_flags_vertical = 3
+text = "0011"
+align = 1
+autowrap = true
+
+[node name="DecodedStringHeader" type="Label" parent="MessageView"]
+margin_top = 184.0
+margin_right = 512.0
+margin_bottom = 210.0
+text = "Decoded Message"
+align = 1
+autowrap = true
+
+[node name="DecodedString" type="Label" parent="MessageView"]
+margin_top = 214.0
+margin_right = 512.0
+margin_bottom = 240.0
+text = "0011"
+align = 1
+autowrap = true
+
+[node name="AlphabetScrollContainer" type="ScrollContainer" parent="."]
+editor/display_folded = true
+anchor_left = 0.05
+anchor_top = 0.45
+anchor_right = 0.5
+anchor_bottom = 0.9
+
+[node name="AlphabetContainer" type="VBoxContainer" parent="AlphabetScrollContainer"]
+margin_right = 460.8
+margin_bottom = 270.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="CenterContainer" type="CenterContainer" parent="."]
+anchor_left = 0.05
+anchor_top = 0.9
+anchor_right = 0.33
+anchor_bottom = 1.0
+size_flags_horizontal = 3
+size_flags_vertical = 4
+
+[node name="SubmitEncoding" type="Button" parent="CenterContainer"]
+margin_left = 58.0
+margin_top = 14.0
+margin_right = 228.0
+margin_bottom = 46.0
+text = "Submit Encoding"
+
+[node name="CenterContainer2" type="CenterContainer" parent="."]
+editor/display_folded = true
+anchor_left = 0.33
+anchor_top = 0.9
+anchor_right = 0.66
+anchor_bottom = 1.0
+size_flags_horizontal = 3
+size_flags_vertical = 4
+
+[node name="ShowButton" type="Button" parent="CenterContainer2"]
+margin_left = 76.0
+margin_top = 14.0
+margin_right = 260.0
+margin_bottom = 46.0
+text = "Show Explanation"
+
+[node name="LevelSelect" type="CenterContainer" parent="."]
+editor/display_folded = true
+anchor_left = 0.66
+anchor_top = 0.9
+anchor_right = 1.0
+anchor_bottom = 1.0
+size_flags_horizontal = 3
+size_flags_vertical = 4
+
+[node name="HBoxContainer" type="HBoxContainer" parent="LevelSelect"]
+margin_left = 117.0
+margin_top = 14.0
+margin_right = 230.0
+margin_bottom = 46.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+alignment = 1
+
+[node name="prev" type="Button" parent="LevelSelect/HBoxContainer"]
+margin_right = 55.0
+margin_bottom = 32.0
+text = "prev"
+
+[node name="next" type="Button" parent="LevelSelect/HBoxContainer"]
+margin_left = 59.0
+margin_right = 113.0
+margin_bottom = 32.0
+text = "next"
+
+[connection signal="pressed" from="CenterContainer/SubmitEncoding" to="." method="submit_encoding"]
+[connection signal="pressed" from="LevelSelect/HBoxContainer/prev" to="." method="prev"]
+[connection signal="pressed" from="LevelSelect/HBoxContainer/next" to="." method="next"]
