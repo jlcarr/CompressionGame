@@ -63,6 +63,7 @@ func load_level():
 	decode()
 
 
+# Encoding related functions
 func update_encoding(encodedLetter,letter):
 	encoding[letter] = encodedLetter
 	decoding.clear()
@@ -71,13 +72,11 @@ func update_encoding(encodedLetter,letter):
 	encode()
 	decode()
 
-
 func encode():
 	encoded = ""
 	for letter in problem:
 		encoded += encoding[letter]
 	$MessageView/EncodedString.text = encoded
-
 
 func decode():
 	decoded = ""
@@ -92,6 +91,7 @@ func decode():
 	$MessageView/DecodedString.text = decoded
 
 
+# Submission related functions
 func submit_encoding():
 	if problem == decoded:
 		update_instructions("Correct!\nGreat work operator!")
@@ -119,6 +119,7 @@ func set_explanation_mode():
 	update_instructions(explanation)
 
 
+# Level change related functions
 func complete():
 	if top_level <= level:
 		top_level += 1
@@ -129,8 +130,14 @@ func set_levels_select():
 	$LevelSelect/HBoxContainer/prev.disabled = (level <= 1)
 
 func next():
-	level += 1
-	load_level()
+	if level == levels.size():
+		update_instructions("""Congradulations!
+You have proven yourself deftly skilled in the art of data compression.
+I see great applications for the skills you have learned in the future.
+By studying the information entropy of Claude Shannon, and the Huffman tree of David Huffman, you may open new doors to yet more knowledge!""")
+	else:
+		level += 1
+		load_level()
 
 func prev():
 	level -= 1
