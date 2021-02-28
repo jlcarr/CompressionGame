@@ -111,7 +111,7 @@ func submit_encoding():
 			update_instructions("Correct!\nGreat work operator!")
 			complete()
 		else:
-			update_instructions("Incorrect!\nThe receiver's message is comes out fine, but you can make the encoded message shorter!\nTry again operator!")
+			update_instructions("Incorrect!\nThe receiver's message comes out fine, but you can make the encoded message shorter!\nTry again operator!")
 	else:
 		update_instructions("Incorrect!\nThe receiver's message is all scrammbled!\nTry again operator!")
 
