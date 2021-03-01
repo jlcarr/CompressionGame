@@ -1,12 +1,9 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=4 format=2]
 
-[ext_resource path="res://basic_font.tres" type="DynamicFont" id=1]
+[ext_resource path="res://MainTheme.tres" type="Theme" id=1]
 [ext_resource path="res://Main.gd" type="Script" id=2]
 
-[sub_resource type="Theme" id=1]
-default_font = ExtResource( 1 )
-
-[sub_resource type="Animation" id=2]
+[sub_resource type="Animation" id=1]
 resource_name = "typing"
 length = 2.0
 tracks/0/type = "value"
@@ -25,8 +22,26 @@ tracks/0/keys = {
 [node name="Main" type="Control"]
 anchor_right = 1.0
 anchor_bottom = 1.0
-theme = SubResource( 1 )
+theme = ExtResource( 1 )
 script = ExtResource( 2 )
+
+[node name="InstructionsContainer" type="PanelContainer" parent="."]
+anchor_left = 0.05
+anchor_top = 0.1
+anchor_right = 0.95
+anchor_bottom = 0.4
+
+[node name="InstructionsContainer2" type="PanelContainer" parent="."]
+anchor_left = 0.05
+anchor_top = 0.4
+anchor_right = 0.5
+anchor_bottom = 0.9
+
+[node name="InstructionsContainer3" type="PanelContainer" parent="."]
+anchor_left = 0.5
+anchor_top = 0.4
+anchor_right = 0.95
+anchor_bottom = 0.9
 
 [node name="LevelHeader" type="Label" parent="."]
 anchor_left = 0.05
@@ -39,9 +54,9 @@ autowrap = true
 
 [node name="Instructions" type="RichTextLabel" parent="."]
 editor/display_folded = true
-anchor_left = 0.05
+anchor_left = 0.1
 anchor_top = 0.1
-anchor_right = 0.95
+anchor_right = 0.9
 anchor_bottom = 0.4
 visible_characters = 0
 percent_visible = 0.0
@@ -51,7 +66,7 @@ However you are only able to send dots and dashes (0's and 1's).
 How can you encode the A's and B's with 0's and 1's in order to send your message?"
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Instructions"]
-anims/typing = SubResource( 2 )
+anims/typing = SubResource( 1 )
 
 [node name="AlphabetHeader" type="Label" parent="."]
 anchor_left = 0.05
@@ -151,10 +166,10 @@ size_flags_horizontal = 3
 size_flags_vertical = 4
 
 [node name="SubmitEncoding" type="Button" parent="CenterContainer"]
-margin_left = 58.0
-margin_top = 14.0
-margin_right = 228.0
-margin_bottom = 46.0
+margin_left = 62.0
+margin_top = 15.0
+margin_right = 224.0
+margin_bottom = 45.0
 text = "Submit Encoding"
 
 [node name="CenterContainer2" type="CenterContainer" parent="."]
@@ -167,14 +182,13 @@ size_flags_horizontal = 3
 size_flags_vertical = 4
 
 [node name="ShowButton" type="Button" parent="CenterContainer2"]
-margin_left = 76.0
-margin_top = 14.0
-margin_right = 260.0
-margin_bottom = 46.0
+margin_left = 80.0
+margin_top = 15.0
+margin_right = 256.0
+margin_bottom = 45.0
 text = "Show Explanation"
 
 [node name="LevelSelect" type="CenterContainer" parent="."]
-editor/display_folded = true
 anchor_left = 0.66
 anchor_top = 0.9
 anchor_right = 1.0
@@ -183,23 +197,23 @@ size_flags_horizontal = 3
 size_flags_vertical = 4
 
 [node name="HBoxContainer" type="HBoxContainer" parent="LevelSelect"]
-margin_left = 117.0
-margin_top = 14.0
-margin_right = 230.0
-margin_bottom = 46.0
+margin_left = 125.0
+margin_top = 15.0
+margin_right = 222.0
+margin_bottom = 45.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 alignment = 1
 
 [node name="prev" type="Button" parent="LevelSelect/HBoxContainer"]
-margin_right = 55.0
-margin_bottom = 32.0
+margin_right = 47.0
+margin_bottom = 30.0
 text = "prev"
 
 [node name="next" type="Button" parent="LevelSelect/HBoxContainer"]
-margin_left = 59.0
-margin_right = 113.0
-margin_bottom = 32.0
+margin_left = 51.0
+margin_right = 97.0
+margin_bottom = 30.0
 text = "next"
 
 [connection signal="pressed" from="CenterContainer/SubmitEncoding" to="." method="submit_encoding"]

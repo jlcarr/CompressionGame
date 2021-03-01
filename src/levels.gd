@@ -89,7 +89,7 @@ P : 101
 R : 110
 T : 111
 
-It is recommended to read up on the binary number system to learn a systematic way to generate all combinations of two,three or more symbols.
+It is recommended to read up on the binary number system to learn a systematic way to generate all combinations of two, three or more symbols.
 There's plenty to be learned down that rabbit-hole!"""
 	},
 	{

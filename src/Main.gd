@@ -142,16 +142,22 @@ func complete():
 	set_levels_select()
 	
 func set_levels_select():
-	$LevelSelect/HBoxContainer/next.disabled = (level >= top_level)
-	$LevelSelect/HBoxContainer/prev.disabled = (level <= 1)
+	if (level >= top_level):
+		#$LevelSelect/HBoxContainer/next.disabled = true
+		$LevelSelect/HBoxContainer/next.hide()
+	else:
+		#$LevelSelect/HBoxContainer/next.disabled = false
+		$LevelSelect/HBoxContainer/next.show()
+	if (level <= 1):
+		#$LevelSelect/HBoxContainer/prev.disabled = true
+		$LevelSelect/HBoxContainer/prev.hide()
+	else:
+		#$LevelSelect/HBoxContainer/prev.disabled = false
+		$LevelSelect/HBoxContainer/prev.show()
 
 func next():
 	if level == levels.size():
-		$LevelHeader.text = "You Win!"
-		update_instructions("""Congradulations!
-You have proven yourself deftly skilled in the art of data compression.
-I see great applications for the skills you have learned in the future.
-By studying the information entropy of Claude Shannon, and the Huffman tree of David Huffman, you may open new doors to yet more knowledge!""")
+		get_tree().change_scene("res://End.tscn")
 	else:
 		level += 1
 		load_level()
