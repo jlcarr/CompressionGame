@@ -6,8 +6,7 @@ const levels = [
 		"problem": "AB",
 		"target": 100,
 		"instructions": 
-"""YOU are a telegraph operator working with the world's latest and greatest form of long distance communication!
-The first message you are tasked with sending is: AB (to test if the machine is working).
+"""The first message you are tasked with sending is: AB (to test if the machine is working).
 However you are only able to send dots and dashes (0's and 1's)!
 How can you encode the A's and B's with 0's and 1's in order to send your message?""",
 		"explanation":
@@ -169,9 +168,11 @@ Z : 111
 Try it out!
 
 Now this seems all very convoluted and tricky. One is tempted to ask if there's a methodology to this? An algorithm perhaps?
-Yes! It is suggest to you look up Huffman encoding and Huffman trees.
-You'll need it before facing your final challenge"""
-	},
+Yes! It is suggest to you look up Huffman encoding and Huffman trees."""
+	}
+]
+
+const hidden = [
 	{
 		"title": "Level 8: The Final Boss",
 		"problem": "EASEINERASERS",

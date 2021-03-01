@@ -3,7 +3,7 @@ A game that teaches for concept of data compression and information entropy, mad
 
 Play online [here](https://jcarr.ca/CompressionGame/)
 
-## Resrouces
+## Resources
 - Godot web with Github pages and Github Actions as CI
    - http://paulgestwicki.blogspot.com/2020/08/a-slightly-easier-way-to-get-started.html
 - Useful Wikipedia pages
