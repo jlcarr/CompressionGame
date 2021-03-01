@@ -15,28 +15,31 @@ theme = ExtResource( 1 )
 script = ExtResource( 2 )
 
 [node name="Title" type="Label" parent="."]
-anchor_top = 0.3
+anchor_top = 0.2
 anchor_right = 1.0
-anchor_bottom = 0.3
+anchor_bottom = 0.2
 custom_fonts/font = SubResource( 1 )
 text = "The Encoder"
 align = 1
 valign = 2
 
 [node name="SubTitle" type="Label" parent="."]
-anchor_left = 0.2
-anchor_top = 0.4
-anchor_right = 0.8
-anchor_bottom = 0.4
+anchor_left = 0.1
+anchor_top = 0.3
+anchor_right = 0.9
+anchor_bottom = 0.3
 text = "A game in which YOU are a telegraph operator who must learn to encode your clients' messages for transmission.
-By solving these puzzles you will learn about data encoding and compression!"
+
+By solving these puzzles you will learn about data encoding and compression!
+
+To learn how modern computers store your data in binary, compress data in ZIP files and other formats, and send your messages efficiently through the internet, we must first go back to the past to solve the perplexing puzzle posed by data encoding!"
 autowrap = true
 
 [node name="StartButton" type="Button" parent="."]
 anchor_left = 0.4
-anchor_top = 0.7
+anchor_top = 0.8
 anchor_right = 0.6
-anchor_bottom = 0.7
+anchor_bottom = 0.8
 text = "Start"
 
 [connection signal="pressed" from="StartButton" to="." method="start"]

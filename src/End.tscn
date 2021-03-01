@@ -27,7 +27,8 @@ anchor_top = 0.3
 anchor_right = 0.8
 anchor_bottom = 0.3
 text = "You have proven yourself talented in telecommunications by encoding and compressing the messages of the people.
-I see great applications for the skills you have learned in the future with data storage and yet more advanced technologies for transmitting information.
+
+In the future the internet will use these techniques for data encoding and compression, computers will store data using these techniques as well.
 
 By studying the information entropy of Claude Shannon, and the Huffman tree of David Huffman, you may open new doors to yet more knowledge!"
 autowrap = true
