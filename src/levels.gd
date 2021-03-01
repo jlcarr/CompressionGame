@@ -7,7 +7,7 @@ const levels = [
 		"target": 100,
 		"instructions": 
 """The first message you are tasked with sending is: AB (to test if the machine is working).
-However you are only able to send dots and dashes (0's and 1's)!
+However the telegraph is only able to send dots and dashes (0's and 1's)!
 How can you encode the A's and B's with 0's and 1's in order to send your message?""",
 		"explanation":
 """The simplest solution is:
@@ -18,8 +18,7 @@ But there are many possible solutions!
 
 Here's another:
 A : 00
-B : 11
-"""
+B : 11"""
 	},
 	{
 		"title": "Level 2: Longer Letters",
@@ -27,7 +26,7 @@ B : 11
 		"target": 100,
 		"instructions": 
 """Great start my good fellow!
-Let's just make sure you've for the hang of it by trying out a longer message.
+Let's just make sure you've got the hang of it by trying out a longer message.
 Please encode AAAAAAHH for transmission.""",
 		"explanation":
 """Again, the simplest solution is:
@@ -36,7 +35,7 @@ B : 1
 
 And as before there are again many options; in fact any solution to Level 1 will work here as well!
 
-Try this one again to be sure:
+Try this other encoding to be sure:
 A : 00
 B : 11"""
 	},
@@ -53,7 +52,7 @@ So much for easy as ABC!""",
 """We need to use more than one 0 or 1 for some of our letter subsitutions now.
 Let's start off with looking at all the possible values two of our encoding symbols can take on:
 00, 01, 10, 11
-If we try putting those in for our substitutions we'll find a solution that works!
+If we try putting these pairs in for our substitutions we'll find a solution that works!
 
 A : 00
 B : 01
@@ -66,19 +65,21 @@ Here's an example that will NOT work:
 A : 0
 B : 1
 C : 00
-D : 11"""
+D : 11
+This is because the receiver won't be able to properly decode the received message: 
+AA would have the exact same encoding as C"""
 	},
 	{
 		"title": "Level 4: Counting Up",
 		"problem": "ENTROPIC",
 		"target": 100,
 		"instructions": 
-"""Let's try even more letters to make sure we've really got the hand of it!
+"""Let's try even more letters to make sure we've really got the hang of it!
 Please encode ENTROPIC
 Isn't this exciting?""",
 		"explanation":
 """Last time we needed to go through all possible combinations of two symbols for each letter.
-This time we have even more letters, and so we need to three symbols to encode each letter.
+This time we have even more letters, and so we need three symbols to encode each letter.
 
 C : 000
 E : 001
@@ -113,7 +114,8 @@ A : 0
 B : 10
 C : 11
 
-Notice how A only requires one 0 to be represented, and as it appears more frequently in the message, this means our encoded message will be shorter!"""
+Notice how A only requires one 0 to be represented, and as it appears more frequently in the message, this means our encoded message will be shorter!
+In particular we're able to use 6 symbols to encode the message instead of the 8 we would have used with our previous approach."""
 	},
 	{
 		"title": "Level 6: Deflate",
@@ -121,7 +123,9 @@ Notice how A only requires one 0 to be represented, and as it appears more frequ
 		"target": 6,
 		"instructions": 
 """Brilliant! You're not only translating messages into the machine's language, you're also making it more efficient!
-Try another one to make sure: SEEK""",
+Imagine all the uses for this! Messages being made shorter will take a shorter amount of time to send and cost less.
+In fact we could also save our our data on file using compression so that it takes fewer resources!
+Let's try another example: SEEK""",
 		"explanation":
 """This is essentially the same problem as before:
 We have two letters that appear once, and one letter that appears twice.
@@ -135,7 +139,7 @@ S : 11"""
 		"problem": "ABAZAARBAR",
 		"target": 18,
 		"instructions": 
-"""Here's the next kick up in difficulty:
+"""You've done so well. We now have a final challenge for you:
 Now you have more than one letter that's more common than the others.
 How can you best encode the message A BAZAAR BAR
 WARNING: This one's much harder than all the previous puzzles. There's no shame in looking at the explanation: it's for learning!""",
@@ -147,7 +151,7 @@ B appears 2 times
 R appears 2 times
 Z appears 1 time
 
-Since A appear by far the most number of times (in fact equal to all the other letters combined) we could gain a lot by only needing one symbol to represent it.
+Since A appears by far the most number of times (in fact equal to all the other letters combined) we could gain a lot by only needing one symbol to represent it.
 Let's then assign
 A : 0
 Now we can't have the encoding of any of the other letters start with 0 since it could be misconstrued for an A. We know we'll need more than one symbol for our other encodings.
@@ -165,10 +169,11 @@ B : 10
 R : 110
 Z : 111
 
-Try it out!
+Try it out! You'll see it only takes 18 symbols to encode the message, whereas it would have taken 20 with the naive approach.
 
 Now this seems all very convoluted and tricky. One is tempted to ask if there's a methodology to this? An algorithm perhaps?
-Yes! It is suggest to you look up Huffman encoding and Huffman trees."""
+Yes! We suggest to you look up Huffman encoding and Huffman trees.
+But for now, you have successfully completed your introduction to data encoding and compression!"""
 	}
 ]
 

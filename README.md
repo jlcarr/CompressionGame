@@ -1,7 +1,11 @@
 # CompressionGame
-A game that teaches for concept of data compression and information entropy, made using the Godot game engine 
+A game that introduces the concept of data encoding and compression, made using the Godot game engine 
 
 Play online [here](https://jcarr.ca/CompressionGame/)
+
+## Description
+YOU play as a telegraph operator who must encode messages with dots and dashes (0s and 1s).  
+You'll need to learn about binary representations and data compression in order to solve the puzzles presented.
 
 ## Resources
 - Godot web with Github pages and Github Actions as CI
