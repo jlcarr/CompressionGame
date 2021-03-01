@@ -46,7 +46,7 @@ B : 11"""
 		"instructions": 
 """So far you've been able to just map A's to 0's and B's to 1's, but what if we add another letter?
 We need you to encode ABCD now.
-Now simple one for one subsitutions won't work!
+Now simple one for one substitutions won't work!
 So much for easy as ABC!""",
 		"explanation":
 """We need to use more than one 0 or 1 for some of our letter subsitutions now.
@@ -59,7 +59,7 @@ B : 01
 C : 10
 D : 11
 
-As always, there are many solutions, but watch out! Things are getting trickier, and fewers solution candidates will work!
+As always, there are many solutions, but watch out! Things are getting trickier, and fewer solution candidates will work!
 
 Here's an example that will NOT work:
 A : 0
@@ -124,7 +124,6 @@ In particular we're able to use 6 symbols to encode the message instead of the 8
 		"instructions": 
 """Brilliant! You're not only translating messages into the machine's language, you're also making it more efficient!
 Imagine all the uses for this! Messages being made shorter will take a shorter amount of time to send and cost less.
-In fact we could also save our our data on file using compression so that it takes fewer resources!
 Let's try another example: SEEK""",
 		"explanation":
 """This is essentially the same problem as before:
@@ -184,7 +183,7 @@ const hidden = [
 		"target": 32,
 		"instructions": 
 """With all your hard work you're ready for the final challenge.
-Encode EASEINERASERS optimially""",
+Encode EASEINERASERS optimally""",
 		"explanation":
 """To solve this puzzle let's again list the number of times each letter appears
 A appears 2 times

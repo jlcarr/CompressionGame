@@ -32,7 +32,7 @@ text = "A game in which YOU are a telegraph operator who must learn to encode yo
 
 By solving these puzzles you will learn about data encoding and compression!
 
-To learn how modern computers store your data in binary, compress data in ZIP files and other formats, and send your messages efficiently through the internet, we must first go back to the past to solve the perplexing puzzle posed by data encoding!"
+To learn how modern computers store their data in binary, compress data in ZIP files and other formats, and send messages efficiently through the internet, we must first go back to the past to solve the perplexing puzzles posed by data encoding!"
 autowrap = true
 
 [node name="StartButton" type="Button" parent="."]
