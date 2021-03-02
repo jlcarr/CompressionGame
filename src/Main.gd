@@ -73,7 +73,7 @@ func load_level():
 # Encoding related functions
 func update_encoding(encodedLetter, letter, textEntry):
 	var regex = RegEx.new()
-	regex.compile("^\\d*$")
+	regex.compile("^[01]*$")
 	print(encodedLetter)
 	if not regex.search(encodedLetter):
 		textEntry.menu_option(textEntry.MENU_UNDO)

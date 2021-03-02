@@ -67,7 +67,7 @@ B : 1
 C : 00
 D : 11
 This is because the receiver won't be able to properly decode the received message: 
-AA would have the exact same encoding as C"""
+AA (00) would have the exact same encoding as C (00)"""
 	},
 	{
 		"title": "Level 4: Counting Up",
@@ -140,7 +140,7 @@ S : 11"""
 		"instructions": 
 """You've done so well. We now have a final challenge for you:
 Now you have more than one letter that's more common than the others.
-How can you best encode the message A BAZAAR BAR
+How can you best encode the message ABAZAARBAR
 WARNING: This one's much harder than all the previous puzzles. There's no shame in looking at the explanation: it's for learning!""",
 		"explanation":
 """Let's try to follow a logical path to trying to solve this puzzle.
